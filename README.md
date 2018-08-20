@@ -8,7 +8,7 @@ Install
 ---
 
 ```
-npm install markdown-it-class --save-dev
+npm install @toycode/markdown-it-class --save-dev
 ```
 ```
 
