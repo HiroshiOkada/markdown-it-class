@@ -10,7 +10,6 @@ Install
 ```
 npm install @toycode/markdown-it-class --save-dev
 ```
-```
 
 Although it will work with "yarn", I have not tried it.
 
