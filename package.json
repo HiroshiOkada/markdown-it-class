@@ -1,0 +1,33 @@
+{
+  "name": "@toycode/markdown-it-class",
+  "version": "1.0.1",
+  "description": "A markdown-it plugin that add classes by tag name",
+  "keywords": [
+    "markdown-it",
+    "markdown-it-plugin",
+    "class"
+  ],
+  "bugs": {
+    "url": "https://github.com/HiroshiOkada/markdown-it-class/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/HiroshiOkada/markdown-it-class.git"
+  },
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Hiroshi Okada",
+  "devDependencies": {
+    "jest": "^23.5.0",
+    "markdown-it": "^8.4.2",
+    "markdown-it-attrs": "^2.3.1",
+    "markdown-it-style": "^1.0.0",
+    "npm": "^6.4.0"
+  },
+  "jest": {
+    "transform": {}
+  }
+}
