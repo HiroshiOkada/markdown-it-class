@@ -1,6 +1,6 @@
 const MarkdownIt = require('markdown-it')
-const markdownItClass = require('@toycode/markdown-it-class')
 const attrs = require('markdown-it-attrs')
+const markdownItClass = require('@toycode/markdown-it-class')
 
 const mdText = `# Colors and Cords\n
 
