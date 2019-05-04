@@ -1,6 +1,6 @@
 {
   "name": "@toycode/markdown-it-class",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "description": "A markdown-it plugin that add classes by tag name",
   "keywords": [
     "markdown-it",
