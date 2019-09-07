@@ -8,7 +8,7 @@ const toArray = a => (Array.isArray(a) ? a : [a])
 
 function parseTokens(tokens) {
   tokens.forEach(token => {
-    if (/_open$/.test(token.type) && mapping[token.tag]) {
+    if (/(_open$|image)/.test(token.type) && mapping[token.tag]) {
       const orig = splitWithSpace(token.attrGet('class'))
       const addition = toArray(mapping[token.tag])
       token.attrSet('class', [...orig, ...addition].join(' '))
