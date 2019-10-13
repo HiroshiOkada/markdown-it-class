@@ -3,7 +3,7 @@ const MarkdownItClass = require('./index.js')
 const attrs = require('markdown-it-attrs')
 
 describe('markdown-it-class', () => {
-  it('add a class to corresponding tags', () => {
+  it('adds a class to corresponding tags', () => {
     const mapping = {
         h1: 'title',
         h2: 'subtitle'
@@ -18,7 +18,7 @@ describe('markdown-it-class', () => {
     expect(md.render(mdtxt).trim()).toBe(htmltxt)
   })
 
-  it('add classes to corresponding tags', () => {
+  it('adds classes to corresponding tags', () => {
     const mapping = {
         h1: ['title', 'is-4'],
         h2: ['subtitle', 'is-6']
@@ -33,13 +33,27 @@ describe('markdown-it-class', () => {
     expect(md.render(mdtxt).trim()).toBe(htmltxt)
   })
 
-  it('add classes to em tags', () => {
+  it('adds classes to em tags', () => {
     const mapping = {
         em: 'tag',
       },
-      mdtxt = '# Thre are three buttons, *red* *green* and *blue*.'
+      mdtxt = '# There are three buttons, *red* *green* and *blue*.'
     htmltxt =
-      '<h1>Thre are three buttons, <em class="tag">red</em> <em class="tag">green</em> and <em class="tag">blue</em>.</h1>'
+      '<h1>There are three buttons, <em class="tag">red</em> <em class="tag">green</em> and <em class="tag">blue</em>.</h1>'
+
+    const md = new MarkdownIt()
+    md.use(MarkdownItClass, mapping)
+
+    expect(md.render(mdtxt).trim()).toBe(htmltxt)
+  })
+  
+  it('adds classes to img tags', () => {
+    const mapping = {
+        img: 'tag',
+      },
+      mdtxt = '![alt text](http://placehold.it/720x480.jpg)'
+    htmltxt =
+      '<p><img src="http://placehold.it/720x480.jpg" alt="alt text" class="tag"></p>'
 
     const md = new MarkdownIt()
     md.use(MarkdownItClass, mapping)
@@ -47,7 +61,7 @@ describe('markdown-it-class', () => {
     expect(md.render(mdtxt).trim()).toBe(htmltxt)
   })
 
-  it('work with markdown-it-attrs', () => {
+  it('works with markdown-it-attrs', () => {
     const mapping = {
         h1: ['is-4', 'is-black'],
         h2: 'is-6'
