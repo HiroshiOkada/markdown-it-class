@@ -46,6 +46,35 @@ describe('markdown-it-class', () => {
 
     expect(md.render(mdtxt).trim()).toBe(htmltxt)
   })
+
+  it('adds classes to code spans', () => {
+    const mapping = {
+        code: 'tag',
+      },
+      mdtxt = '# There are three languages, `python` `JavaScript` and `C`.'
+    htmltxt =
+      '<h1>There are three languages, <code class="tag">python</code> <code class="tag">JavaScript</code> and <code class="tag">C</code>.</h1>'
+
+    const md = new MarkdownIt()
+    md.use(MarkdownItClass, mapping)
+
+    expect(md.render(mdtxt).trim()).toBe(htmltxt)
+  })
+
+  it('adds classes to code blocks', () => {
+    const mapping = {
+        code: 'tag',
+      },
+      mdtxt = '# Hello World Example, ```javascript console.log(\'Hello World\'); ```.'
+    htmltxt =
+      '<h1>Hello World Example, <code class=\"tag\">javascript console.log(\'Hello World\');</code>.</h1>'
+
+    const md = new MarkdownIt()
+    md.use(MarkdownItClass, mapping)
+
+    expect(md.render(mdtxt).trim()).toBe(htmltxt)
+  })
+  
   
   it('adds classes to img tags', () => {
     const mapping = {
